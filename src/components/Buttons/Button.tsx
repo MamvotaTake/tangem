@@ -17,11 +17,12 @@ type ButtonBaseProps = Pick<
     | 'aria-haspopup'
 > & {
     children?: React.ReactNode
-    type?: 'primary' | 'secondary' | 'tertiary'
+    type?: 'primary' | 'secondary' | 'tertiary' | 'icon'
     className?: string
     size?:  'small' | 'medium'
     'aria-label'?: string,
     to?: string
+    icon?: React.ReactNode
 }
 
 export const Button: React.FunctionComponent<ButtonBaseProps & React.RefAttributes<HTMLButtonElement>> =
@@ -32,7 +33,7 @@ export const Button: React.FunctionComponent<ButtonBaseProps & React.RefAttribut
                 className,
                 type="primary",
                 size="small",
-                to,
+                icon,
                 ...buttonProps
             },
                 ref
@@ -52,6 +53,7 @@ export const Button: React.FunctionComponent<ButtonBaseProps & React.RefAttribut
                     )}
                     {...buttonProps}
                 >
+                    {icon ? <span className="Button__Icon">{icon}</span> : null}
                     {children ? <span className="Button__Content font-medium text-base">{children}</span> : null}
                 </button>
             );

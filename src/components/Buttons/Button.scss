@@ -38,13 +38,23 @@
     color: #fff;
   }
 
-  &.Button--small {
+
+  &--small {
     padding: 0.625rem 0.875rem;
   }
 
-  &.Button--medium {
+  &--medium {
     display: inline-flex;
     padding: 0.75rem 1.5rem;
     align-items: flex-start;
+  }
+
+  &__Icon{
+    display: flex;
+    font-size: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.10);
+    padding: .3rem;
+    color: #fff;
+    border-radius: 50%;
   }
 }
