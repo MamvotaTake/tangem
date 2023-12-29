@@ -18,9 +18,8 @@ type ButtonBaseProps = Pick<
 > & {
     children?: React.ReactNode
     type?: 'primary' | 'secondary' | 'tertiary'
-    status?: 'primary' | 'danger' | 'primary-alt' | 'muted' | 'stealth'
     className?: string
-    size?: 'xsmall' | 'small' | 'medium' | 'large'
+    size?:  'small' | 'medium'
     'aria-label'?: string,
     to?: string
 }
@@ -32,7 +31,6 @@ export const Button: React.FunctionComponent<ButtonBaseProps & React.RefAttribut
                 children,
                 className,
                 type="primary",
-                status="primary",
                 size="small",
                 to,
                 ...buttonProps
@@ -49,7 +47,6 @@ export const Button: React.FunctionComponent<ButtonBaseProps & React.RefAttribut
                         'Button',
 
                         `Button--${type}`,
-                        `Button--${status}`,
                         `Button--${size}`,
                         className,
                     )}
