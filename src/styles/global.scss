@@ -4,10 +4,6 @@
 @import "utilities";
 
 
-:root {
-  @include root-variables;
-}
-
 *,
 *::after,
 *::before,{
@@ -21,7 +17,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 200vh;
-  background-color: black;
+  background-color: $bg-bridge;
 }
 
 h1 {
