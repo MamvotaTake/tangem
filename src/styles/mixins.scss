@@ -1,0 +1,11 @@
+@import "variables";
+
+@mixin screen($breakpoint) {
+  @if not $breakpoint {
+    @content;
+  } @else {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
