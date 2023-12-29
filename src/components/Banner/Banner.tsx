@@ -9,14 +9,17 @@ type BannerBaseProps = {
     onClose?: () => void
     className?: string
     dismissKey?: string
+    fullWidth? : boolean
 
 }
-export function Banner({children, type, size, onClose, className, dismissKey = ''}: BannerBaseProps): JSX.Element {
+export function Banner({children, type, size, onClose, className, fullWidth = true}: BannerBaseProps): JSX.Element {
+
     return (
         <div className={clsx(
             'Banner',
             `Banner--${type}`,
             `Banner--${size}`,
+            !fullWidth && "Banner--fullWidth",
             className
             )}
         onClick={onClose}>

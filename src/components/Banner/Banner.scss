@@ -1,10 +1,123 @@
 .Banner{
   display: flex;
-  gap: 0.5rem;
+  justify-content: space-between;
   align-items: center;
-  min-height: 3rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.8rem;
   font-weight: 500;
-  background: linear-gradient(180deg, #101010 0%, #0B0B0B 100%);
+  position: relative;
+  width: 100%;
 
+  &--small{
+    background: linear-gradient(180deg, #101010 0%, #0B0B0B 100%);
+  }
+
+
+  &--medium{
+    background-image: url("../../assets/background.png"), linear-gradient(180deg, #101010 100%, #0B0B0B 100%);
+  }
+
+  &--fullWidth{
+    width: 45%;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.45);
+  }
+
+  &__content{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+
+    &--info{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: end;
+      gap: .9rem;
+      width: 100%;
+      height: 100%;
+
+      &-title{
+        font-size: 2.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 110%; /* 3.1625rem */
+        letter-spacing: -0.115rem;
+      }
+
+      &-discount{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 110%; /* 2.75rem */
+        letter-spacing: -0.1rem;
+        background-image: linear-gradient(to right bottom, rgba(#D7A830, .3), rgba(#D7A830, 0.9));
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      &-coupon{
+        color: #6C6C70;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%; /* 1.3rem */
+        letter-spacing: 0.005rem;
+      }
+
+      &-code{
+        color: #D7A830;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        letter-spacing: 0.005rem;
+      }
+
+    }
+
+    &-close{
+      position: absolute;
+      top: -2.5rem;
+      right: -2.5rem;
+    }
+
+
+    &-actions{
+      display: flex;
+    }
+
+    &-discount,
+    &-coupon{
+      color: #D7A830;
+      font-weight: bold;
+    }
+
+    &-discount{
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+
+    &-img{
+      height: 10%;
+      object-fit: cover;
+      object-position: center;
+
+    }
+    &-card{
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 3rem;
+    }
+
+  }
+}
+
+.Banner__content-img{
+  height: 10%;
 }
