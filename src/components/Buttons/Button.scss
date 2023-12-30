@@ -1,3 +1,4 @@
+@import '../../styles/mixins';
 .Button{
   &,
   &:link,
@@ -9,8 +10,7 @@
     user-select: none;
     background: none;
     border: none;
-    transition: all 200ms ease, color 200ms ease, border 200ms ease, opacity 200ms ease,
-    transform 100ms ease;
+    transition: all 200ms ease, transform 400ms ease;
   }
 
   &:active,
@@ -41,6 +41,11 @@
 
   &--small {
     padding: 0.625rem 0.875rem;
+
+    //@include respond(tab-port) {
+    //  background: red;
+    //}
+
   }
 
   &--medium {

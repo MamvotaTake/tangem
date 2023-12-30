@@ -1,10 +1,11 @@
 import {Banner} from "./components/Banner";
 import banner from "./assets/display-small.png"
 import {Button} from "./components/Buttons";
-import {AiOutlineClose} from "react-icons/ai";
+import { AiOutlineClose} from "react-icons/ai";
 import './components/Banner/Banner.scss'
 import { motion,  useInView} from "framer-motion"
 import {useEffect, useRef, useState} from "react";
+import {IoIosArrowForward} from "react-icons/io";
 
 function App() {
     const ref = useRef(null)
@@ -33,17 +34,18 @@ function App() {
   return (
       <>
           <div className='Container'>
-              <div  className='Banner__content'>
+              <div  className='Banner__content--smallBanner'>
                   <Banner size="small" type="info" >
                       <img src={banner}  alt='banner small'/>
-                      <div className='flex justify-between'>
-                          <p className="font-bold">Black Friday, <span className='font-normal ml-2'>24-27 Nov</span></p>
+                      <div className='Banner__content--smallBanner-info'>
+                          <p className="Banner__content--smallBanner-info-title">Black Friday, <span> 24-27 Nov</span></p>
                           <span className="Banner__content-discount">10% OFF</span>
-                          <p>Use code <span className="Banner__content-coupon">10FRIDAY</span> at checkout</p>
+                          <p>Use code <span className="Banner__content-coupon">10FRIDAY</span> <span>at checkout</span></p>
                       </div>
-                      <div className='Banner__content-actions'>
+                      <div className='Banner__content--actions'>
                           <Button>Shop now</Button>
-                          <Button size="small" type="icon" icon={<AiOutlineClose/>}/>
+                          <Button size="small" className="Banner__content--actions-close" type="icon" icon={<AiOutlineClose/>}/>
+                          <Button size="small" className="Banner__content--actions-arrow" type="icon" icon={<IoIosArrowForward/>}/>
                       </div>
                   </Banner>
               </div>
@@ -60,7 +62,7 @@ function App() {
                                          hidden: {opacity: 0, scale: 0}
                                      }}
           >
-              <div className="Banner__content-card">
+              <div className="Banner__content--card">
                   <Banner size="medium" fullWidth={false}>
                       {/*<img src={banner} className="Banner__content-img" alt='banner small'/>*/}
                       <div className='Banner__content--info'>
@@ -69,8 +71,9 @@ function App() {
                           <p className="Banner__content--info-coupon">Use code <span
                               className="Banner__content--info-code">10FRIDAY</span> at checkout</p>
 
-                          <div className='Banner__content-actions'>
+                          <div className='Banner__content--card-actions'>
                               <Button type="secondary" size="medium">Shop now through Monday</Button>
+                              <Button type="secondary" size="medium">Shop now</Button>
                           </div>
                       </div>
                       <Button size="small" type="icon" onClick={handleClose} icon={<AiOutlineClose/>}
