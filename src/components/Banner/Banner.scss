@@ -1,0 +1,271 @@
+@import '../../styles/mixins';
+
+.Banner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //padding: 0.5rem 0.8rem;
+  font-weight: 500;
+  position: relative;
+  width: 100%;
+
+  &--small{
+    background: linear-gradient(180deg, #101010 0%, #0B0B0B 100%);
+
+    & img{
+
+      @include respond(tab-port){
+          width: 11.5rem;
+      }
+
+      @include respond(phone){
+        width: 6rem;
+        height: 2rem;
+      }
+    }
+
+    @include respond(tab-port){
+      //padding: 0.5rem 0.1rem;
+    }
+  }
+
+
+  &--medium{
+
+    background-image: url("../../assets/background.png"), linear-gradient(180deg, #101010 100%, #0B0B0B 100%);
+    background-repeat: no-repeat;
+
+    @include respond(phone){
+      background-position: -200px, center;
+    }
+  }
+
+  &--fullWidth{
+    width: 45%;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.45);
+
+    @include respond(tab-port){
+      width: 80%;
+    }
+
+    @include respond(phone){
+      width: 100%;
+    }
+  }
+
+  &__content{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+
+    &--smallBanner{
+      display: flex;
+
+      &-info{
+        display: flex;
+        &-title{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1rem;
+          font-weight: bold;
+
+
+          & span{
+            font-size: 1rem;
+            font-weight: lighter;
+            margin-left: .3rem;
+          }
+
+        }
+        & p:not(:last-child){
+
+
+          @include respond(phone) {
+            font-weight: 500;
+          }
+
+          & span{
+
+            @include respond(phone) {
+              display: none;
+            }
+          }
+        }
+
+        & p:not(:first-child){
+
+          & span:not(:first-child){
+
+            @include respond(tab-port) {
+              display: none;
+            }
+          }
+
+          @include respond(phone){
+            display: none;
+          }
+        }
+      }
+
+
+    }
+
+    &--actions{
+      display: flex;
+
+      & button:nth-child(3){
+        display: none;
+
+        @include respond(phone){
+          display: block;
+        }
+
+      }
+
+      & button:nth-child(2){
+
+        @include respond(tab-port){
+          display: none;
+        }
+      }
+
+      & button:nth-child(1){
+        @include respond(phone){
+          display: none;
+        }
+
+      }
+
+    }
+
+
+    &--info{
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      text-align: center;
+      justify-content: center;
+      gap: .9rem;
+      width: 100%;
+      height: 100%;
+
+      &-title{
+        font-size: 2.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 110%; /* 3.1625rem */
+        letter-spacing: -0.115rem;
+      }
+
+      &-discount{
+        display: flex;
+        text-align: end;
+        margin-right: 3rem;
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 110%; /* 2.75rem */
+        letter-spacing: -0.1rem;
+        @include textBackgroundGradient(rgba(#D7A830, .3), rgba(#D7A830, 0.9));
+      }
+
+      &-coupon{
+        color: #6C6C70;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%; /* 1.3rem */
+        letter-spacing: 0.005rem;
+      }
+
+      &-code{
+        color: #D7A830;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        letter-spacing: 0.005rem;
+      }
+
+    }
+
+    &-close{
+      position: absolute;
+      top: -2.5rem;
+      right: -2.5rem;
+
+    }
+
+
+
+
+
+
+    &-discount,
+    &-coupon{
+      color: #D7A830;
+      font-weight: bold;
+
+    }
+
+
+    &-discount{
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+
+    }
+
+    &-img{
+      height: 10%;
+      object-fit: cover;
+      object-position: center;
+
+    }
+    &--card{
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 3rem;
+
+      @include respond(tab-port){
+        margin-right: 2rem;
+      }
+
+      @include respond(phone){
+        margin-right: 0px;
+      }
+
+      &-actions{
+        display: inline-block;
+
+        & button:nth-child(1){
+          display: block;
+
+          @include respond(phone){
+            display: none;
+          }
+
+        }
+
+        & button:nth-child(2){
+          display: none;
+
+          @include respond(phone){
+            display: flex;
+            margin-right: 3rem;
+          }
+
+        }
+      }
+
+    }
+
+  }
+}
+
+.Banner__content-img{
+  height: 10%;
+}
