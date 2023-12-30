@@ -1,6 +1,4 @@
-# React + TypeScript + Vite
-
-## Expanding the ESLint configuration
+# Tasks
 
 ```js
 1. Layout the page according to the layout in Figma. The layout must be cross-browser and valid, and the page must be displayed correctly in all browsers of the latest version. (IE is not needed).
@@ -11,5 +9,9 @@
 6. When scrolling the page, as soon as the upper banner disappears from the viewport, the lower banner appears smoothly.
 7. If the user clicks the close button, the lower banner is hidden and should no longer appear after refreshing the page.
 
+```
+# Solution
+```js
+https://tangem-t.netlify.app/
 ```
 
